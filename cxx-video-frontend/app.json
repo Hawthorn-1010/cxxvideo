@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/userLogin/userLogin",
+        "pages/index/index",
+        "pages/videoInfo/videoInfo",
+        "pages/mine/mine",
+        "pages/searchVideo/searchVideo",
+        "pages/chooseBgm/chooseBgm",
+        "pages/userRegist/regist"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "香槟超新星",
+        "navigationBarTextStyle": "black"
+    },
+    "debug": true,
+    "sitemapLocation": "sitemap.json"
+}

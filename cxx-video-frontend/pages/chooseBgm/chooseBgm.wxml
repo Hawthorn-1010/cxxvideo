@@ -1,0 +1,49 @@
+<view>
+    <form bindsubmit='upLoad'>
+      <view class="inputView">
+            <label class="loginLabel">请选择背景音乐：</label>
+      </view>
+
+<!--新版本音频组件-->
+  <!--当前为停止状态  -->
+  <radio-group name="bgmId">
+    <block wx:for="{{bgmList}}" wx:for-index="index">
+      <view class="container">
+        <view class="container" data-index='{{index}}' bindtap='play'>
+          <image src='../resource/images/play.png' class="statusBtn"></image>
+        </view>
+        <view class="container" data-index='{{index}}' bindtap='pause'>
+          <image src='../resource/images/paused.png' class="statusBtn"></image>
+        </view>
+
+        <view class="words">
+          <view class="song">{{item.name}}</view>
+          <view class="author">{{item.author}}</view>
+        </view>
+        <view>
+          <radio value="{{item.id}}" color="rgb(240,176,183)" style="margin-top: 20px;"></radio>
+        </view>
+      </view>
+    </block>
+  </radio-group>
+
+  <!--旧版本音频组件-->
+  <!-- <radio-group>
+    <block wx:for="{{bgmList}}" wx:for-index="index">
+      <view class="container">
+        <audio class="audioFont" name="{{item.name}}" author="{{item.author}}" src="{{serverUrl}}{{item.path}}" id="{{item.id}}" controls loop></audio>
+        <radio color="rgb(240,176,183)" style="margin-top: 30px;"></radio>
+      </view>
+    </block>
+  </radio-group> -->
+
+        <view class="inputView" style="margin-top: 30px;">
+            <label class="loginLabel">视频描述：</label>
+            <input name="desc" class="inputText" placeholder="说点什么吧~" placeholder-style="color:rgb(202, 199, 199);"/>
+        </view>
+
+        <!-- 提交 -->
+        <button class="submitBtn" form-type='submit'>上传视频</button>
+        <button class="gobackBtn" form-type='reset'>重置</button>
+    </form>
+</view>
